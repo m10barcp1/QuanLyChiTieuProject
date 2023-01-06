@@ -38,7 +38,7 @@ public class UserData
         public Name_Bank nameBank;
         public Source source;
         public Target target;
-
+        public string description;
     }
 
     #region Type
@@ -70,10 +70,26 @@ public class UserData
         Room,
         Unknown
     }
+
+    #endregion
+
+
+    #region Function
+
+    public void AddExpenditures(int value, string time, Name_Bank name_Bank, Source source, Target target, string description)
+    {
+        var expenditures = new Expenditures();
+        expenditures.value = value;
+        expenditures.time = time;
+        expenditures.nameBank = name_Bank;
+        expenditures.source = source;
+        expenditures.target = target;
+        expenditures.description = description;
+        expendituresList.Add(expenditures);
         
-    #endregion  
+    }
 
-
+    #endregion
 
 
     [NonSerialized]
